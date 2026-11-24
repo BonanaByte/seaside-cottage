@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#d5dfde">
+  <title>海边小屋</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/island.css?v=daynight2">
+  <script defer src="vendor/three.min.js"></script>
+  <script defer src="vendor/RoundedBoxGeometry.js"></script>
+  <script defer src="vendor/RoomEnvironment.js"></script>
+  <script defer src="js/coastal-palette.js?v=color8"></script>
+  <script defer src="js/soft-furnishings.js?v=color8"></script>
+  <script defer src="js/upstairs.js?v=clear-windows"></script>
+  <script defer src="js/terrace.js?v=atmosphere9"></script>
+  <script defer src="js/landscape.js?v=landscape72"></script>
+  <script defer src="js/outdoor-life.js?v=color8"></script>
+  <script defer src="js/shore.js?v=color8"></script>
+  <script defer src="js/island.js?v=clear-windows"></script>
+</head>
+<body>
+  <main>
+    <canvas id="island" tabindex="0" aria-label="海边小屋三层剖面，方向键旋转，加减键缩放，Home 键回到全景"></canvas>
+    <header>
+      <div class="title"><h1>海边小屋</h1><span id="view-label">小屋全景</span></div>
+      <div class="header-actions">
+        <button id="daynight" type="button" role="switch" aria-checked="false" title="切换到夜晚" disabled>
+          夜晚模式<span class="switch-track" aria-hidden="true"></span>
+        </button>
+        <a href="room.html">进入互动房间 <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+    <footer>
+      <div class="scene-actions">
+        <button id="scene-action" type="button">走近客厅</button>
+        <button id="upper-action" type="button">查看二楼</button>
+        <button id="window-action" type="button" hidden>拉开窗帘</button>
+        <button id="pendant-action" type="button" hidden>打开挂灯</button>
+        <button id="kitchen-action" type="button" hidden>关闭厨房灯</button>
+        <span class="hint">拖动旋转<span class="divider">/</span><span class="desktop">滚轮缩放</span><span class="mobile">双指缩放</span></span>
+      </div>
+      <nav aria-label="视角控制">
+        <button id="out" aria-label="缩小视图" title="缩小视图">−</button>
+        <button id="in" aria-label="放大视图" title="放大视图">＋</button>
+        <button id="reset">回到全景</button>
+      </nav>
+    </footer>
+    <div id="status" role="status">正在布置海岛……</div>
+  </main>
+</body>
+</html>
+

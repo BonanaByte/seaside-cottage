@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1C2342">
+  <title>互动小屋</title>
+  <meta name="description" content="走进一间可以自由探索的 3D 小屋。点选家具、移动人物，看看房间里的每个角落。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='24' width='48' height='34' rx='5' fill='%231C2342'/%3E%3Cpath d='M5 28 32 7l27 21' fill='none' stroke='%23E2434F' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css?v=room">
+</head>
+<body>
+  <canvas id="gl" aria-label="可以互动的 3D 小屋"></canvas>
+
+  <header class="topbar">
+    <button class="logo" id="home" title="回到全景" aria-label="回到小屋全景">回到全景</button>
+    <div class="tools">
+      <button class="daynight" id="daynight" aria-label="切换白天和夜晚" title="切换白天和夜晚">☀︎</button>
+    </div>
+  </header>
+
+  <details class="tasks">
+    <summary>小屋任务 <span id="progress">0/3</span></summary>
+    <ul><li id="task-piano">在钢琴上弹一段旋律</li><li id="task-lamp">按一下台灯开关</li><li id="task-cat">摸摸椅子上的猫</li></ul>
+  </details>
+
+  <div class="hint" id="hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.9-2.5L4 14.6a1.5 1.5 0 0 1 2.3-1.9L9 15"/></svg>
+    点地面移动 · 拖动旋转 · 点家具互动
+  </div>
+
+  <div id="labels" aria-label="房间互动点"></div>
+  <div class="bubble" id="bubble"></div>
+  <div class="bubble mebub" id="abub"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div id="fallback">
+    <div>
+      <h2>小屋暂时无法显示</h2>
+      <p id="fbwhy" style="font-size:12px;margin-bottom:8px"></p>
+      <button class="btn primary" style="margin:0 auto 14px" onclick="location.reload()">重新加载</button>
+      <p>请使用支持 WebGL 的浏览器。</p>
+    </div>
+  </div>
+
+  <div id="loader" role="status"><div class="ld"><span class="t">正在布置小屋……</span></div></div>
+
+  <script src="js/app.js?v=room"></script>
+</body>
+</html>

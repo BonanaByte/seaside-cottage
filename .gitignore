@@ -1,0 +1,14 @@
+# Third-party libraries, restored by `node restore-dependencies.mjs`
+vendor/
+node_modules/
+
+# Tooling output
+.playwright-cli/
+*.log
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
